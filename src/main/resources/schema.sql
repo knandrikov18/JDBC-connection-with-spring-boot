@@ -5,5 +5,4 @@ CREATE TABLE Player(
     Birth_date TIMESTAMP,
     Titles INTEGER,
     PRIMARY KEY (ID)
-
 );

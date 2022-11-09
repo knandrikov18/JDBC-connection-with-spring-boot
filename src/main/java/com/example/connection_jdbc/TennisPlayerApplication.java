@@ -7,6 +7,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Date;
 
 @SpringBootApplication
@@ -23,8 +26,10 @@ public class TennisPlayerApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         logger.info("Inserting Player 4: {}",dao.insertPlayer( new Player(4, "Thiem", "Austria", new Date(System.currentTimeMillis()),17)));
 
+        String Date1 ="31/12/1998";
+
         logger.info("Updating Player with Id 4: {}", dao.updatePlayer(
-                new Player(4, "Thiem" , "Austria" , Date.valueOf("1993-09-03"),17));
+                new Player(4, "Thiem" , "Austria" , new SimpleDateFormat("dd/MM/yyyy").parse(Date1),17)));
 
         logger.info("All Players Data: {}",dao.getAllPlayers());
     }
